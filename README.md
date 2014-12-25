@@ -42,7 +42,9 @@ Default value: `''`
 String prepended to each asset URL.
 
 ### Release History
+#### 1.1.0
+  Add prepend option
 #### 1.0.0
   Initial release
 
-### Originally forked from [gulp-css-rebase-urls](https://github.com/kjbekkelund/gulp-css-rebase-urls)
+#### Originally forked from [gulp-css-rebase-urls](https://github.com/kjbekkelund/gulp-css-rebase-urls)

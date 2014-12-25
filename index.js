@@ -24,6 +24,10 @@ function rebaseFile(options) {
       rebased = rebased.replace(/\\/g, '/');
     }
 
+    if (options.prepend) {
+      rebased = options.prepend + rebased;
+    }
+
     util.log('[retarget]'.magenta, url.bold, '=>', rebased.green, '✔'.green);
 
     return rebased;
@@ -38,6 +42,7 @@ module.exports = function(opts) {
   return through.obj(function(file, enc, cb) {
     file.contents = new Buffer(rebaseFile({
       orig: file.contents.toString(),
+      prepend: opts.prepend || '',
       cwd: path.dirname(file.path),
       root: path.join(file.cwd, root)
     }));
