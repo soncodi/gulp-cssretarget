@@ -1,0 +1,27 @@
+{
+  "name": "gulp-cssretarget",
+  "version": "1.0.0",
+  "description": "Retarget relative CSS URLs during asset rebasing.",
+  "main": "index.js",
+  "dependencies": {
+    "gulp-util": "~3.0.1",
+    "rework": "~0.20.2",
+    "through2": "~0.4.0",
+    "validator": "~3.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/soncodi/gulp-cssretarget.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "css",
+    "retarget",
+    "url"
+  ],
+  "author": {
+    "name": "Alex Soncodi",
+    "email": "asoncodi@gmail.com"
+  },
+  "license": "MIT"
+}
