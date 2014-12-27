@@ -44,8 +44,8 @@ Default value: `''`
 String prepended to each asset URL.
 
 ### Release History
-#### 1.1.1
-  Update docs
+#### 1.1.2 - 1.1.1
+  Update docs, refresh package
 #### 1.1.0
   Add prepend option
 #### 1.0.0
