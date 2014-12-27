@@ -12,16 +12,18 @@ npm install gulp-cssretarget --save
 ```js
 var cssRetarget = require('gulp-cssretarget');
 var useref = require('gulp-useref');
+var concat = require('gulp-concat');
 ...
 
 var userefAssets = useref.assets({
   noconcat: true // preserve paths for gulp-cssretarget
 });
 
-// retargets relative URLs from www to dist
+// retargets relative URLs when moving from www to dist
 return gulp.src('www/index.html')
   .pipe(userefAssets)
   .pipe(gulpif('**/*.css', cssRetarget({ root: 'www' })))
+  .pipe(gulpif('**/*.css', concat('style.css')))
   .pipe(userefAssets.restore())
   .pipe(gulp.dest('dist'));
 ```

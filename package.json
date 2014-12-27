@@ -17,6 +17,8 @@
     "gulpplugin",
     "css",
     "retarget",
+    "rebase",
+    "relative",
     "url"
   ],
   "author": {
