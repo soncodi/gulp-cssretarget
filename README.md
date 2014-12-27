@@ -21,9 +21,7 @@ var userefAssets = useref.assets({
 // retargets relative URLs from www to dist
 return gulp.src('www/index.html')
   .pipe(userefAssets)
-  .pipe(gulpif('**/*.css', cssRetarget({
-    root: 'dist'
-  })))
+  .pipe(gulpif('**/*.css', cssRetarget({ root: 'www' })))
   .pipe(userefAssets.restore())
   .pipe(gulp.dest('dist'));
 ```
