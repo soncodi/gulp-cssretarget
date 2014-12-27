@@ -13,6 +13,7 @@ npm install gulp-cssretarget --save
 var cssRetarget = require('gulp-cssretarget');
 var useref = require('gulp-useref');
 var concat = require('gulp-concat');
+var gulpif = require('gulp-if');
 ...
 
 var userefAssets = useref.assets({
@@ -24,6 +25,7 @@ return gulp.src('www/index.html')
   .pipe(userefAssets)
   .pipe(gulpif('**/*.css', cssRetarget({ root: 'www' })))
   .pipe(gulpif('**/*.css', concat('style.css')))
+  .pipe(gulpif('**/*.js', concat('style.js')))
   .pipe(userefAssets.restore())
   .pipe(gulp.dest('dist'));
 ```
@@ -33,7 +35,7 @@ return gulp.src('www/index.html')
 Type: `String`
 Default value: `''`
 
-The new directory root relative to which your assets will live.
+The directory relative to which paths are determined.
 
 #### options.prepend
 Type: `String`
@@ -42,6 +44,8 @@ Default value: `''`
 String prepended to each asset URL.
 
 ### Release History
+#### 1.1.1
+  Update docs
 #### 1.1.0
   Add prepend option
 #### 1.0.0
