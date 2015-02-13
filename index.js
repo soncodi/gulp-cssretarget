@@ -2,6 +2,7 @@ var rework = require('rework');
 var path = require('path');
 var through = require('through2');
 var util = require('gulp-util');
+var colors = util.colors;
 
 function rebaseFile(options) {
   return rework(options.orig).use(rework.url(function(url) {
@@ -28,7 +29,12 @@ function rebaseFile(options) {
       rebased = options.prepend + rebased;
     }
 
-    util.log('[retarget]'.magenta, url.bold, '=>', rebased.green, '✔'.green);
+    util.log(
+      colors.magenta('[retarget]'),
+      colors.bold(url),
+      '=>',
+      colors.green(rebased + ' ✔')
+    );
 
     return rebased;
   })).toString();
