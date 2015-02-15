@@ -44,6 +44,8 @@ Default value: `''`
 String prepended to each asset URL.
 
 ### Release History
+#### 1.1.3
+  Fix undefined color format. Bump deps.
 #### 1.1.2 - 1.1.1
   Update docs, refresh package
 #### 1.1.0
