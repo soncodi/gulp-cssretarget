@@ -43,6 +43,13 @@ Default value: `''`
 
 String prepended to each asset URL.
 
+#### options.silent
+Type: `Boolean`
+Default value: `false`
+
+Don't log the rebased URLs.
+
+
 ### Release History
 #### 1.1.3
   Fix undefined color format. Bump deps.

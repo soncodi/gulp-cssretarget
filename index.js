@@ -29,12 +29,14 @@ function rebaseFile(options) {
       rebased = options.prepend + rebased;
     }
 
-    util.log(
-      colors.magenta('[retarget]'),
-      colors.bold(url),
-      '=>',
-      colors.green(rebased + ' ✔')
-    );
+    if (!options.silent) {
+      util.log(
+        colors.magenta('[retarget]'),
+        colors.bold(url),
+        '=>',
+        colors.green(rebased + ' ✔')
+      );
+    }
 
     return rebased;
   })).toString();
@@ -49,6 +51,7 @@ module.exports = function(opts) {
     file.contents = new Buffer(rebaseFile({
       orig: file.contents.toString(),
       prepend: opts.prepend || '',
+      silent: opts.silent || false,
       cwd: path.dirname(file.path),
       root: path.join(file.cwd, root)
     }));
