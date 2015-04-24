@@ -51,6 +51,8 @@ Don't log the rebased URLs.
 
 
 ### Release History
+#### 1.1.4
+  Add silent option (@monestereo)
 #### 1.1.3
   Fix undefined color format. Bump deps.
 #### 1.1.2 - 1.1.1
