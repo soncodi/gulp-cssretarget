@@ -29,12 +29,14 @@ function rebaseFile(options) {
       rebased = options.prepend + rebased;
     }
 
-    util.log(
-      colors.magenta('[retarget]'),
-      colors.bold(url),
-      '=>',
-      colors.green(rebased + ' ✔')
-    );
+    if (!options.silent) {
+      util.log(
+        colors.magenta('[retarget]'),
+        colors.bold(url),
+        '=>',
+        colors.green(rebased + ' ✔')
+      );
+    }
 
     return rebased;
   })).toString();
