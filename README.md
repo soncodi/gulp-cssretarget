@@ -47,13 +47,15 @@ String prepended to each asset URL.
 Type: `String`
 Default value: `''`
 
-String added before the final extension of each asset URL (useful for proper cache busting). Example with `{ suffix: "-1.2.0" }`:
+String added before the final extension of each asset URL (useful for proper cache busting, works great with [`gulp-rename`](https://github.com/hparra/gulp-rename)'s `suffix` option).
+
+Example with `{ suffix: "-1.2.0" }`:
 
 ```text
-[retarget] images/some-image.png => images/some-image-1.2.0.png ✔
-[retarget] images/some-image.small.png => images/some-image.small-1.2.0.png ✔
-[retarget] images/some-image.png?size=small => images/some-image-1.2.0.png?size=small ✔
-[retarget] images/some-image.png#size=small => images/some-image-1.2.0.png#size=small ✔
+[retarget] images/my-image.png => images/my-image-1.2.0.png ✔
+[retarget] images/my-image.small.png => images/my-image.small-1.2.0.png ✔
+[retarget] images/my-image.png?size=small => images/my-image-1.2.0.png?size=small ✔
+[retarget] images/my-image.png#size=small => images/my-image-1.2.0.png#size=small ✔
 ```
 
 #### options.silent
