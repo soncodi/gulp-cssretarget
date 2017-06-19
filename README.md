@@ -43,6 +43,19 @@ Default value: `''`
 
 String prepended to each asset URL.
 
+#### options.suffix
+Type: `String`
+Default value: `''`
+
+String added before the final extension of each asset URL (useful for proper cache busting). Example with `{ suffix: "-1.2.0" }`:
+
+```text
+[retarget] images/some-image.png => images/some-image-1.2.0.png ✔
+[retarget] images/some-image.small.png => images/some-image.small-1.2.0.png ✔
+[retarget] images/some-image.png?size=small => images/some-image-1.2.0.png?size=small ✔
+[retarget] images/some-image.png#size=small => images/some-image-1.2.0.png#size=small ✔
+```
+
 #### options.silent
 Type: `Boolean`
 Default value: `false`
@@ -51,6 +64,8 @@ Don't log the rebased URLs.
 
 
 ### Release History
+#### 1.2.0
+  Add suffix option (@sp00m)
 #### 1.1.4
   Add silent option (@monestereo)
 #### 1.1.3
