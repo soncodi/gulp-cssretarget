@@ -43,6 +43,21 @@ Default value: `''`
 
 String prepended to each asset URL.
 
+#### options.suffix
+Type: `String`
+Default value: `''`
+
+String added before the final extension of each asset URL (useful for proper cache busting, works great with [`gulp-rename`](https://github.com/hparra/gulp-rename)'s `suffix` option).
+
+Example with `{ suffix: "-1.2.0" }`:
+
+```text
+[retarget] images/my-image.png => images/my-image-1.2.0.png ✔
+[retarget] images/my-image.small.png => images/my-image.small-1.2.0.png ✔
+[retarget] images/my-image.png?size=small => images/my-image-1.2.0.png?size=small ✔
+[retarget] images/my-image.png#size=small => images/my-image-1.2.0.png#size=small ✔
+```
+
 #### options.silent
 Type: `Boolean`
 Default value: `false`
@@ -51,6 +66,8 @@ Don't log the rebased URLs.
 
 
 ### Release History
+#### 1.2.0
+  Add suffix option (@sp00m)
 #### 1.1.4
   Add silent option (@monestereo)
 #### 1.1.3

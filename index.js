@@ -29,6 +29,10 @@ function rebaseFile(options) {
       rebased = options.prepend + rebased;
     }
 
+    if (options.suffix) {
+      rebased = rebased.replace(/(?=\.[^.]+(?:[#?].*)?$)/, options.suffix);
+    }
+
     if (!options.silent) {
       util.log(
         colors.magenta('[retarget]'),
@@ -51,6 +55,7 @@ module.exports = function(opts) {
     file.contents = new Buffer(rebaseFile({
       orig: file.contents.toString(),
       prepend: opts.prepend || '',
+      suffix: opts.suffix || '',
       silent: opts.silent || false,
       cwd: path.dirname(file.path),
       root: path.join(file.cwd, root)
